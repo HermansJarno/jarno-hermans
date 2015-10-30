@@ -9,6 +9,7 @@ namespace Yatzhee3
     public class ScoreboardController
     {
         ScoreboardView view;
+        
         public ScoreboardModel model;
 
         public ScoreboardView getView()
@@ -17,10 +18,16 @@ namespace Yatzhee3
 
         }
 
+        public void ResetAantalWorpen()
+        {
+          model.Score = 0;
+        }
+
         public ScoreboardController()
         {
             //maak nieuwe instantie aan van view
             view = new ScoreboardView(this);
+            
             model = new ScoreboardModel();
         }
 
@@ -29,13 +36,19 @@ namespace Yatzhee3
 
         }
 
-        public void UpdateAantalWorpen()
+        public int TelAantalOgen(int n)
         {
-            model.Score += 1;
-            
-            view.UpdateScoreboard();
+            int aantal = 0;
+            //   tel aantal keer dat n voorkomt en stop dat in aantal
+            return aantal;
         }
 
 
+        public void UpdateAantalWorpen()
+        {
+            int newScore = model.Score += 1;
+            ScoreboardModel.Aantalworpen = newScore;
+            view.UpdateScoreboard();
+        }
     }
 }

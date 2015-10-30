@@ -16,7 +16,13 @@ namespace Yatzhee3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Yahtzee());
+            Globals.formYahtzee = new Yahtzee();    //nieuw
+            Application.Run(Globals.formYahtzee);   //extra globals om overal aan te kunnen
         }
+    }
+
+    public static class Globals     //nieuw
+    {
+      public static Yahtzee formYahtzee;
     }
 }
